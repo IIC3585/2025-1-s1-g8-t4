@@ -1,25 +1,56 @@
 const tplItem = document.createElement('template');
 tplItem.innerHTML = `
   <style>
+    :host {
+      display: block;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    :host(:first-of-type) {
+      /* Potentially remove top border for the first item if parent has border */
+    }
+    :host(:last-of-type) {
+      border-bottom: none;
+    }
     .item {
-      border: 1px solid #ccc;
-      margin: 0.5rem 0;
-      border-radius: 5px;
+      border-radius: 0;
       overflow: hidden;
-      font-family: sans-serif;
     }
     .header {
-      background: #f0f0f0;
-      padding: 0.5rem 1rem;
+      background: transparent; 
+      padding: 1rem 1.25rem;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 500; 
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .header:hover {
+      background-color: #f9f9f9;
+    }
+    .header::after {
+      content: '+'; 
+      font-size: 1.25rem;
+      color: #777;
+      transition: transform 0.2s ease-in-out;
+    }
+    :host([open]) .header::after {
+      content: '−'; 
+      transform: rotate(180deg); 
     }
     .content {
-      padding: 0.5rem 1rem;
-      display: none;
+      padding: 0 1.25rem 1rem; 
+      color: #555;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding-bottom 0.3s ease-out;
     }
     :host([open]) .content {
-      display: block;
+      opacity: 1;
+      max-height: 500px; 
+      padding-bottom: 1rem;
     }
   </style>
   <div class="item">

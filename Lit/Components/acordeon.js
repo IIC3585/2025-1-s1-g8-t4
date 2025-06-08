@@ -2,6 +2,24 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@2.8.0/index.js?modu
 import './acordeon-item.js';
 
 export class Acordeon extends LitElement{
+    static styles = css`
+        :host {
+            display: block;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            margin: 0 0 1rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #333;
+        }
+    `;
     
     static properties = {
         items: {type: Array},

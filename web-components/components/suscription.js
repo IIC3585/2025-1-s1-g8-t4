@@ -3,38 +3,39 @@ import './suscription-plan.js';
 const tplOpts = document.createElement('template');
 tplOpts.innerHTML = `
   <style>
-    .container {
-      border-radius: 10px;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      font-family: Arial, sans-serif;
-
-      padding: 1rem;
+    :host {
+      display: block;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin-top: 2rem;
-
-      height: 400px;
-
+    }
+    .container {
+      border-radius: 12px;
+      background: #ffffff; 
+      border: 1px solid #e0e0e0; 
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); 
+      padding: 2rem; 
+      min-height: 300px; 
       text-align: center;
-      display: grid;
-      align-content: space-between;
-      justify-items: center;
       box-sizing: border-box;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
       
     .title {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      font-weight: bold;
-      color: #333;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 600;
+      color: #222;
     }
     .planes {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
+      justify-content: center;
       align-items: stretch;
-      height: 300px;
+      width: 100%;
     }
   </style>
   <div class="container">
