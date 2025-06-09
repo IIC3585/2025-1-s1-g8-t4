@@ -36,6 +36,27 @@ export class Suscription extends LitElement {
       align-items: stretch;
       width: 100%;
     }
+    @media (max-width: 1100px) {
+      
+      :host {
+        display: flex;
+      }
+
+      .container {
+        flex-grow: 1;
+      }
+      
+      .planes {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+      }
+
+      suscription-plan {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
   `;
 
   render() {

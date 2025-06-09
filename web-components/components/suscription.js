@@ -37,6 +37,17 @@ tplOpts.innerHTML = `
       align-items: stretch;
       width: 100%;
     }
+    @media (max-width: 1100px) {
+      .planes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    suscription-plan {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
   </style>
   <div class="container">
     <div class="title">Planes disponibles</div>

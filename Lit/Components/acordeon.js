@@ -3,23 +3,39 @@ import './acordeon-item.js';
 
 export class Acordeon extends LitElement{
     static styles = css`
-        :host {
-            display: block;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        h2 {
-            margin: 0 0 1rem;
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #333;
-        }
-    `;
+    :host {
+      display: block;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      :host {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  `;
     
     static properties = {
         items: {type: Array},

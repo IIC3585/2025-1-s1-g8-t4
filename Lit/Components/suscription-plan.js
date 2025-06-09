@@ -98,6 +98,13 @@ export class SuscriptionPlan extends LitElement {
     .suscription-button:active {
       transform: translateY(0);
     }
+
+    @media (max-width: 1100px) {
+      :host {
+        width: 100%;
+        height: auto;
+      }
+    }
   `;
 
 
