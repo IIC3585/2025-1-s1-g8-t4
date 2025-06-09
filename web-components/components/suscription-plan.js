@@ -2,11 +2,11 @@ const tplPlan = document.createElement('template');
 tplPlan.innerHTML = `
   <style>
     :host {
-      display: flex; /* Ensure host itself can be a flex item and fill height */
-      flex-direction: column; /* Stack card content vertically */
-      height: 100%; /* Crucial for align-items: stretch on parent */
+      display: flex;
+      flex-direction: column;
+      height: 100%; 
       box-sizing: border-box;
-      font-family: inherit; /* Inherit from suscription.js */
+      font-family: inherit; 
     }
 
     .card {
@@ -17,8 +17,8 @@ tplPlan.innerHTML = `
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Pushes button to bottom */
-      flex-grow: 1; /* Card fills the host height */
+      justify-content: space-between;
+      flex-grow: 1;
       box-sizing: border-box;
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
@@ -28,8 +28,8 @@ tplPlan.innerHTML = `
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
     }
 
-    .card-main-content { /* Wrapper for title, price, benefits */
-      flex-grow: 1; /* Allows this section to grow, pushing button down if card is tall */
+    .card-main-content { 
+      flex-grow: 1; 
       display: flex;
       flex-direction: column;
     }
@@ -43,21 +43,21 @@ tplPlan.innerHTML = `
     }
 
     .price {
-      color: #0077cc; /* Modern primary blue */
+      color: #0077cc; 
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1.25rem; /* Space before benefits */
+      margin-bottom: 1.25rem;
       text-align: center;
     }
 
     ul#benefits {
       list-style: none;
       padding: 0;
-      margin: 0 0 1.5rem 0; /* Space above the button */
+      margin: 0 0 1.5rem 0; 
       font-size: 0.9rem;
       color: #555;
       text-align: left;
-      /* flex-grow: 1; /* Let card-main-content handle growth */
+      flex-grow: 1; 
     }
 
     ul#benefits li {
@@ -69,7 +69,7 @@ tplPlan.innerHTML = `
 
     ul#benefits li::before {
       content: '✓';
-      color: #28a745; /* Green checkmark */
+      color: #28a745;
       font-weight: bold;
       margin-right: 0.75rem;
       font-size: 1rem;

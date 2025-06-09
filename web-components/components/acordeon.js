@@ -19,9 +19,6 @@ tplAcc.innerHTML = `
       font-weight: 600;
       color: #333;
     }
-    #container {
-      /* Add any specific container styling here if needed in the future */
-    }
   </style>
   <h2>Acordeon</h2>
   <div id="container"></div>
@@ -32,9 +29,19 @@ class AcordeonBox extends HTMLElement {
     super();
     this.attachShadow({mode:'open'}).appendChild(tplAcc.content.cloneNode(true));
     this._items = [
-      { title: "¿Qué es Lit?",           content: "Lit es una librería liviana para crear componentes web." },
-      { title: "¿Qué es este componente?", content: "Se llama acordeon y permite abrir y cerrar distintas opciones." }
-    ];
+      { title: "¿Qué son Web Components?",           
+        content: `Los Web Components son un conjunto de APIs de plataforma web 
+        que permiten crear nuevas etiquetas HTML personalizadas, reutilizables 
+        y encapsuladas para utilizarlas en páginas y aplicaciones web.` 
+      },{ 
+        title: "¿Qué es este componente?", 
+        content: "Se llama acordeon y permite abrir y cerrar distintas opciones." 
+      },{
+        title: "¿Como funciona el acordeon?",
+        content: `Contiene distintas secciones con información relevante, si se quiere acceder 
+        al detalle solo se debe apretar el encabezado. Es importante notar que otros encabezados se cierran 
+        para no llenar innecesariamente la vista.`
+      }];
     this._openIndex = -1;
     this._onItemClicked = this._onItemClicked.bind(this);
   }

@@ -5,9 +5,6 @@ tplItem.innerHTML = `
       display: block;
       border-bottom: 1px solid #e0e0e0;
     }
-    :host(:first-of-type) {
-      /* Potentially remove top border for the first item if parent has border */
-    }
     :host(:last-of-type) {
       border-bottom: none;
     }
