@@ -54,39 +54,48 @@ export class Suscription extends LitElement {
 
       suscription-plan {
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
       }
     }
   `;
+
+  static properties = {
+    items: {type: Array},
+  };
+
+  constructor(){
+    super();
+    this.items = [{
+      nombre: "Plan Básico",
+      precio: "CLP $4.990",
+      beneficios: ["Acceso limitado","Publicidad incluida"]
+    },{
+      nombre: "Plan Pro",
+      precio: "CLP $9.990",
+      beneficios: ["Sin publicidad","Contenido exclusivo","Soporte técnico"]
+    },{
+      nombre: "Plan Team",
+      precio: "CLP $11.990",
+      beneficios: ["Sin publicidad","Contenido exclusivo","Soporte técnico", "Hasta 5 usuarios"]
+    },{
+      nombre: "Plan Enterprise",
+      precio: "CLP $19.990",
+      beneficios: ["Sin publicidad","Contenido exclusivo","Soporte técnico", "Acceso a API","Integración personalizada"]
+    }]
+  }
 
   render() {
     return html`
       <div class="container">
         <div class="title">Planes disponibles</div>
         <div class="planes">
-          <suscription-plan
-            nombre="Plan Básico"
-            precio="CLP $4.990"
-            beneficios='["Acceso limitado","Publicidad incluida"]'
-          ></suscription-plan>
-
-          <suscription-plan
-            nombre="Plan Pro"
-            precio="CLP $9.990"
-            beneficios='["Sin publicidad","Contenido exclusivo","Soporte técnico"]'
-          ></suscription-plan>
-
-          <suscription-plan
-            nombre="Plan Team"
-            precio="CLP $11.990"
-            beneficios='["Sin publicidad","Contenido exclusivo","Soporte técnico", "Hasta 5 usuarios"]'
-          ></suscription-plan>
-
-          <suscription-plan
-            nombre="Plan Enterprise"
-            precio="CLP $19.990"
-            beneficios='["Sin publicidad","Contenido exclusivo","Soporte técnico", "Acceso a API","Integración personalizada"]'
-          ></suscription-plan>
+          ${this.items.map((item) => html`
+            <suscription-plan
+              .nombre=${item.nombre}
+              .precio=${item.precio}
+              .beneficios=${item.beneficios}>
+              </suscription-plan>
+            `)}
         </div>
       </div>
     `;

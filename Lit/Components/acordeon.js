@@ -51,6 +51,11 @@ export class Acordeon extends LitElement{
         {
             title: "¿Qué es este componente?", 
             content: "Se llama acordeon y permite abrir y cerrar distintas opciones."
+        },{
+            title: "¿Como funciona el acordeon?",
+            content: `Contiene distintas secciones con información relevante, si se quiere acceder 
+            al detalle solo se debe apretar el encabezado. Es importante notar que otros encabezados se cierran 
+            para no llenar innecesariamente la vista.`
         }];
         this.openIndex = -1;
     }

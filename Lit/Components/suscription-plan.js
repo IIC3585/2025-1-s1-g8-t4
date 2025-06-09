@@ -104,6 +104,12 @@ export class SuscriptionPlan extends LitElement {
         width: 100%;
         height: auto;
       }
+      .card {
+        align-items: center;
+      }
+      .suscription-button {
+        width: 50%;
+      }
     }
   `;
 
